@@ -31,7 +31,7 @@ Le reste du domaine est initialisé à 0.
 
 
 **Figure : Visualisation du potentiel initial avec les deux conducteurs fixés**
-
+![Figure 1](images/fig1.png)
 
 
 Cette figure montre simplement l’état initial du domaine avant propagation du potentiel via les équations. Elle ne représente pas encore la physique du problème (pas de solution de Laplace), mais elle prépare le champ de calcul pour les étapes suivantes.
@@ -44,7 +44,7 @@ Le calcul est appliqué 200 fois sur l’ensemble du domaine, sauf sur les zones
 
 
 📷 Figure – Potentiel après 200 itérations
-
+![Figure 1](images/fig2.jpeg)
 Après 200 itérations, le potentiel s’est réparti harmonieusement dans le domaine. On observe une transition progressive entre les deux conducteurs : le potentiel diminue du centre rouge vers la zone bleue, traduisant la présence d’un champ électrique bien orienté. Les conditions aux limites sont respectées, et le résultat confirme que l’algorithme de relaxation s’approche d’un état stationnaire.
 
 
