@@ -16,9 +16,13 @@ Le but du TP est d’appliquer cette méthode DF dans un code Matlab pour résou
 Ce TP a pour objectifs :
 
 -D’appliquer la méthode des différences finies à la résolution de l’équation de Laplace.
+
 -D’implémenter un schéma de résolution numérique en environnement Matlab.
+
 -D’observer la distribution du potentiel V(x,y) dans un domaine contenant deux conducteurs.
+
 -De visualiser les lignes équipotentielles et le champ électrique.
+
 -D’analyser la convergence et l’influence du domaine sur le résultat physique.
 
 ## 3. Étape 1 – Initialisation du domaine (tp01.m)
@@ -88,13 +92,13 @@ On calcule le champ électrique à partir du gradient du potentiel, les composan
 ![Figure 6](fig6.jpg)
 
 Le champ électrique est bien dirigé du conducteur positif vers le négatif. Les vecteurs sont plus denses et plus longs près des conducteurs (champ intense), et s’éloignent à mesure qu’on s’écarte. La distribution est cohérente avec la physique attendue d’un champ électrostatique.
-0. Étape 7 – Calcul de la capacité (tp07.m)
+## Étape 7 – Calcul de la capacité (tp07.m)
 
 Dans cette dernière étape, on utilise le champ électrique E=−∇V pour estimer la charge totale Q entourant le conducteur à +100 V, puis on calcule la capacité selon :  C = Q/U
 
 ![Figure 7](fig7.jpg)
 
-## 9. Conclusion intermédiaire
+## 9. Conclusion 
 
 Ce TP a permis de simuler la répartition du potentiel électrostatique dans un domaine 2D à l’aide de la méthode des différences finies. La solution obtenue est cohérente avec la physique attendue, montrant un champ électrique dirigé du conducteur positif vers le conducteur négatif. L’utilisation d’un critère de convergence, l’analyse des lignes équipotentielles et le calcul de la capacité ont permis de valider la méthode numérique et de mieux comprendre le comportement des systèmes électrostatiques.
 
