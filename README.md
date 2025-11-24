@@ -31,8 +31,8 @@ Le reste du domaine est initialisé à 0.
 
 
 **Figure : Visualisation du potentiel initial avec les deux conducteurs fixés**
-![Figure 1](images/fig1.png)
 
+![Figure 1](fig1.jpg)
 
 Cette figure montre simplement l’état initial du domaine avant propagation du potentiel via les équations. Elle ne représente pas encore la physique du problème (pas de solution de Laplace), mais elle prépare le champ de calcul pour les étapes suivantes.
 
@@ -43,18 +43,18 @@ L’objectif ici est de résoudre l’équation de Laplace de manière numériqu
 Le calcul est appliqué 200 fois sur l’ensemble du domaine, sauf sur les zones des conducteurs où le potentiel reste fixé.
 
 
-📷 Figure – Potentiel après 200 itérations
-![Figure 1](images/fig2.jpeg)
+**Figure – Potentiel après 200 itérations**
+
+![Figure 2](fig2.jpg)
+
 Après 200 itérations, le potentiel s’est réparti harmonieusement dans le domaine. On observe une transition progressive entre les deux conducteurs : le potentiel diminue du centre rouge vers la zone bleue, traduisant la présence d’un champ électrique bien orienté. Les conditions aux limites sont respectées, et le résultat confirme que l’algorithme de relaxation s’approche d’un état stationnaire.
 
 
 ## 5. Étape 3 – Ajout d’un critère de convergence (tp03.m)
-
 Plutôt que de fixer un nombre d’itérations arbitraire, on introduit un critère d’arrêt basé sur la variation maximale du potentiel entre deux itérations successives. Le calcul s’arrête lorsque cette variation devient inférieure à un seuil donné.
+**Figure – Potentiel avec arrêt à epsilon = 0.01**
 
-
-📷 Figure – Potentiel avec arrêt à epsilon = 0.001
-
+![Figure 3](fig3.jpg)
 
 L’utilisation d’un critère de convergence rend l’algorithme plus précis et adaptatif : le calcul s’arrête automatiquement dès que le potentiel devient stable. Un seuil plus strict entraîne un plus grand nombre d’itérations, mais ne modifie pas significativement la forme du potentiel – seulement sa précision numérique. La solution reste visuellement très proche de celle obtenue avec 200 itérations.
 
@@ -62,22 +62,20 @@ L’utilisation d’un critère de convergence rend l’algorithme plus précis 
 ## 6. Étape 4 – Influence de la taille du domaine (tp04.m)
 
 Cette étape explore l’effet de la taille du domaine (valeurs de Nx et Ny) sur la solution obtenue. Un domaine plus large éloigne les bords à potentiel nul, ce qui simule mieux des conditions « à l’infini ».
+Nous avons agrandi le domaine (par exemple Nx = 60, Ny = 60) en conservant la même position relative des conducteurs.
 
-Nous avons agrandi le domaine (par exemple Nx = 80, Ny = 80) en conservant la même position relative des conducteurs.
+**Figure – Potentiel dans un domaine élargi**
 
-
-
-📷 Figure – Potentiel dans un domaine élargi
-
+![Figure 4](fig4.jpg)
 
 Quand le domaine est plus grand, les conducteurs sont plus éloignés des bords à 0 V, ce qui diminue leur influence. Le champ et le potentiel ont plus d’espace pour s’étendre naturellement, ce qui se rapproche mieux de la réalité physique. À l’inverse, un petit domaine fausse les résultats en comprimant les lignes de champ.
 
 ## 7. Étape 5 – Lignes équipotentielles (tp05.m)
 
 Nous avons tracé les lignes équipotentielles à l’aide de la fonction contour, qui permet de visualiser les zones à potentiel constant.
+**Figure – Lignes équipotentielles**
 
-📷 Figure – Lignes équipotentielles
-
+![Figure 5](fig5.jpg)
 
 Les lignes équipotentielles sont perpendiculaires au champ électrique. Elles montrent comment le potentiel évolue entre les deux conducteurs. Plus elles sont rapprochées, plus le champ est intense. C’est un outil précieux pour visualiser le comportement du système.
 
@@ -85,10 +83,19 @@ Les lignes équipotentielles sont perpendiculaires au champ électrique. Elles m
 
 On calcule le champ électrique à partir du gradient du potentiel, les composantes du champ sont extraites via la fonction gradient, puis affichées avec quiver.
 
-📷 Figure – Champ électrique (vecteurs)
+**Figure – Champ électrique (vecteurs)**
+
+![Figure 6](fig6.jpg)
 
 Le champ électrique est bien dirigé du conducteur positif vers le négatif. Les vecteurs sont plus denses et plus longs près des conducteurs (champ intense), et s’éloignent à mesure qu’on s’écarte. La distribution est cohérente avec la physique attendue d’un champ électrostatique.
 
+
+
+
+
+
+
+![Figure 7](fig7.jpg)
 ## 9. Conclusion intermédiaire
 
 Ce TP a permis :
