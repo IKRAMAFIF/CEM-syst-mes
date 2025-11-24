@@ -40,8 +40,8 @@ Cette figure montre simplement l’état initial du domaine avant propagation du
 
 L’objectif ici est de résoudre l’équation de Laplace de manière numérique à l’aide de la méthode des différences finies. On applique la formule d’itération :
 **𝑉𝑖,𝑗=1/4(𝑉𝑖+1,𝑗+𝑉𝑖−1,𝑗+𝑉𝑖,𝑗+1+𝑉𝑖,𝑗−1)**
-Le calcul est appliqué 200 fois sur l’ensemble du domaine, sauf sur les zones des conducteurs où le potentiel reste fixé.
 
+Le calcul est appliqué 200 fois sur l’ensemble du domaine, sauf sur les zones des conducteurs où le potentiel reste fixé.
 
 **Figure – Potentiel après 200 itérations**
 
@@ -88,28 +88,15 @@ On calcule le champ électrique à partir du gradient du potentiel, les composan
 ![Figure 6](fig6.jpg)
 
 Le champ électrique est bien dirigé du conducteur positif vers le négatif. Les vecteurs sont plus denses et plus longs près des conducteurs (champ intense), et s’éloignent à mesure qu’on s’écarte. La distribution est cohérente avec la physique attendue d’un champ électrostatique.
+0. Étape 7 – Calcul de la capacité (tp07.m)
 
-
-
-
-
-
+Dans cette dernière étape, on utilise le champ électrique E=−∇V pour estimer la charge totale Q entourant le conducteur à +100 V, puis on calcule la capacité selon :  C = Q/U
 
 ![Figure 7](fig7.jpg)
+
 ## 9. Conclusion intermédiaire
 
-Ce TP a permis :
-
-De comprendre la résolution numérique de l’équation de Laplace par la méthode des différences finies.
-
-De visualiser l’évolution du potentiel et du champ dans un domaine 2D.
-
-D’expérimenter l’effet du domaine et des critères de convergence.
-
-De tracer les lignes de champ et les lignes équipotentielles pour mieux interpréter les résultats.
-
-Ces outils constituent une base solide pour aborder les calculs de capacités et d’interactions CEM dans des géométries plus complexes.
-
+Ce TP a permis de simuler la répartition du potentiel électrostatique dans un domaine 2D à l’aide de la méthode des différences finies. La solution obtenue est cohérente avec la physique attendue, montrant un champ électrique dirigé du conducteur positif vers le conducteur négatif. L’utilisation d’un critère de convergence, l’analyse des lignes équipotentielles et le calcul de la capacité ont permis de valider la méthode numérique et de mieux comprendre le comportement des systèmes électrostatiques.
 
 
 
