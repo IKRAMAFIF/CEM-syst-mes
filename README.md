@@ -1,4 +1,7 @@
 # Rapport de TP – Simulation du potentiel électrostatique par méthode DF
+## Préparé par
+AFIF Ikram
+AIT ALLA Hajar
 ## 1. Introduction
 
 Dans le domaine de la compatibilité électromagnétique (CEM), la détermination du potentiel électrostatique est essentielle pour comprendre l’influence de structures conductrices sur leur environnement. Lorsque la géométrie devient complexe, la résolution analytique de l’équation de Laplace n’est plus envisageable. On utilise alors des méthodes numériques comme celle des différences finies (DF).
