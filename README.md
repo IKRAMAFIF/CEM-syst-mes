@@ -128,13 +128,18 @@ Pour α = 0.5 et un domaine doublé (L = 4), le schéma FDTD demeure stable, car
  Pour alpha = 1.1 et avec L doublé (L = 4) :
  ![Figure 7](images/TP2/images2_4.png)
  Pour alpha = 1.01 et avec L doublé (L = 4) :
- ![Figure 7](images/TP2/images2_5.png)
+<img src="images/TP2/images2_5.png" alt="Figure 7" width="700">
+ 
  À l’inverse, dès que α dépasse 1 (α = 1.01 ou 1.1), la simulation devient instable : les champs divergent rapidement
  et des oscillations non physiques apparaissent.
+ 
  Pour alpha = 0.95 et avec L doublé (L = 4) :
- ![Figure 7](images/TP2/images2_6.png)
+ 
+<img src="images/TP2/images2_6.png" alt="Figure 7" width="700">
+
  Pour alpha = 0.99 et avec L doublé (L = 4) :
- ![Figure 7](images/TP2/images2_7.png)
+ 
+<img src="images/TP2/images2_7.png" alt="Figure 7" width="700">
   
 ---
 # Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
