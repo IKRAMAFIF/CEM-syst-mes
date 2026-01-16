@@ -173,7 +173,14 @@ On observe alors qu’au niveau du centre, les ondes se superposent sans déphas
  
  On observe le même comportement qu’avec la source hard modifiée mais avec une amplitude divisée par 2. 
 
-  
+  ## Exercice 6 – Les sources spatiales
+
+Dans le cas d’une source spatiale, la forme du champ électrique est imposée uniquement à l’instant initial (n = 1). Par la suite, le champ évolue librement dans le domaine sans apport d’énergie supplémentaire, de manière analogue à une source soft ou à une source hard désactivée après un certain nombre d’itérations.
+
+À partir de cette condition initiale unique, l’énergie injectée se répartit naturellement en deux ondes identiques qui se propagent en sens opposés. Comme l’énergie totale est partagée entre ces deux ondes, l’amplitude de chacune d’elles est divisée par deux et atteint une valeur de 0,5 au lieu de 1.
+
+Afin de retrouver des ondes de même amplitude unitaire se propageant vers la droite et vers la gauche, il est nécessaire de doubler l’amplitude de la condition spatiale initiale. Cela consiste à multiplier la source spatiale par 2 au moment de son injection dans le domaine, avant le démarrage de la boucle temporelle. Chaque onde reçoit alors une quantité d’énergie suffisante pour retrouver une amplitude égale à 1.
+
 ---
 # Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
 
