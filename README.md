@@ -180,7 +180,48 @@ Dans le cas d’une source spatiale, la forme du champ électrique est imposée 
 À partir de cette condition initiale unique, l’énergie injectée se répartit naturellement en deux ondes identiques qui se propagent en sens opposés. Comme l’énergie totale est partagée entre ces deux ondes, l’amplitude de chacune d’elles est divisée par deux et atteint une valeur de 0,5 au lieu de 1.
 
 Afin de retrouver des ondes de même amplitude unitaire se propageant vers la droite et vers la gauche, il est nécessaire de doubler l’amplitude de la condition spatiale initiale. Cela consiste à multiplier la source spatiale par 2 au moment de son injection dans le domaine, avant le démarrage de la boucle temporelle. Chaque onde reçoit alors une quantité d’énergie suffisante pour retrouver une amplitude égale à 1.
+  ## Exercice 7 : Simulations en espace libre : les conditions de non-réflexion («magic time-step ») => scriptFDTD04 et scriptFDTD05
+ Pour assurer la stabilité du schéma FDTD, il est nécessaire de choisir un critère de stabilité strictement inférieur à 1, tout en restant aussi proche que possible de cette valeur. Dans l’exemple précédent, un critère de stabilité égal à 0,5 a été retenu afin de faciliter la mise en œuvre du magic time step. Ce choix permet également de réduire fortement les réflexions aux limites du domaine, ce qui favorise une propagation plus libre de l’onde à l’intérieur du domaine, sans perturbations dues aux effets de bord.
+ 
+ <img src="images/TP2/images2_11.png" alt="Figure 7" width="700">
+ 
+ <img src="images/TP2/images2_12.png" alt="Figure 7" width="700">
+ 
+ <img src="images/TP2/images2_13.png" alt="Figure 7" width="700">
 
+ ## Exercice 8 : Simuler la propagation d’une onde plane pour la traversée d’un diélectrique (1-D) sans pertes => scriptFDTD05 et scriptFDTD06
+ 
+ <img src="images/TP2/images2_14.png" alt="Figure 7" width="700">
+ 
+ L’onde doit se propager uniquement dans le sens + z, sans réflexion sur les bords grâce
+aux conditions absorbantes.
+
+ <img src="images/TP2/images2_15.png" alt="Figure 7" width="700">
+ 
+(a) après passage dans le diélectrique situé en z = 0.2m
+(b) zoom au niveau de l’onde réfléchie
+(c) de l’onde transmise
+(d) dans le diélectrique.
+
+ Détermination de coefficient de Réflexion et Coefficient de transmission :
+  <img src="images/TP2/images2_21.png" alt="Figure 7" width="700">
+  <img src="images/TP2/images2_22.png" alt="Figure 7" width="700">
+
+Tournage du programme pour les nombres d’itérations variables :
+<img src="images/TP2/images2_16.png" alt="Figure 7" width="700">
+<img src="images/TP2/images2_17.png" alt="Figure 7" width="700">
+<img src="images/TP2/images2_18.png" alt="Figure 7" width="700">
+<img src="images/TP2/images2_19.png" alt="Figure 7" width="700">
+
+Pour un nombre réduit d’itérations (par exemple 1000 ou 1250), l’onde incidente n’a pas encore entièrement traversé le domaine de simulation et n’a pas atteint les frontières absorbantes. À ce stade, les ondes réfléchie et transmise commencent à apparaître, mais leur amplitude reste encore limitée.
+
+Une partie de l’onde incidente est réfléchie au niveau de l’interface air–diélectrique, tandis que l’autre partie est transmise à travers le milieu. Lorsque le nombre d’itérations augmente (2000 à 2500), des interférences entre les ondes réfléchies et transmises peuvent se produire, pouvant conduire à l’apparition d’ondes stationnaires.
+
+Au-delà de 2000 itérations, les profils des champs tendent à se stabiliser, ce qui indique la disparition progressive des phénomènes transitoires.
+
+Enfin, la visualisation du champ électrique peut être améliorée en représentant le slab diélectrique à l’écran à l’aide de traits distinctifs et/ou d’une zone colorée, afin de mieux identifier la position du milieu et d’interpréter les phénomènes observés.
+
+ <img src="images/TP2/images2_20.png" alt="Figure 7" width="700">
 ---
 # Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
 
