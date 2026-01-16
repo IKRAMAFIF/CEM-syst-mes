@@ -190,7 +190,7 @@ Les 10 premiers modes de résonance viables (m, n, p, fréquence en Hz) :
   Mode (1, 3, 0): 58061374.22 Hz
   Mode (1, 2, 1): 60112146.15 Hz
 ```
-![Résonance](images/TP3/résonance.jpg)
+![Résonance](images/TP3/résonnance.jpg)
 ### Étape 2 : Simulation FDTD
 
 Deux simulations ont été réalisées en utilisant la méthode FDTD sur 400 itérations temporelles :
