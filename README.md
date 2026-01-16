@@ -41,7 +41,7 @@ Le reste du domaine est initialisé à 0.
 
 **Figure : Visualisation du potentiel initial avec les deux conducteurs fixés**
 
-![Figure 1](images/fig1.jpg)
+![Figure 1](images/TP1/fig1.jpg)
 
 Cette figure montre simplement l’état initial du domaine avant propagation du potentiel via les équations. Elle ne représente pas encore la physique du problème (pas de solution de Laplace), mais elle prépare le champ de calcul pour les étapes suivantes.
 
@@ -54,7 +54,7 @@ Le calcul est appliqué 200 fois sur l’ensemble du domaine, sauf sur les zones
 
 **Figure – Potentiel après 200 itérations**
 
-![Figure 2](images/fig2.jpg)
+![Figure 2](images/TP1/fig2.jpg)
 
 Après 200 itérations, le potentiel s’est réparti harmonieusement dans le domaine. On observe une transition progressive entre les deux conducteurs : le potentiel diminue du centre rouge vers la zone bleue, traduisant la présence d’un champ électrique bien orienté. Les conditions aux limites sont respectées, et le résultat confirme que l’algorithme de relaxation s’approche d’un état stationnaire.
 
@@ -63,7 +63,7 @@ Après 200 itérations, le potentiel s’est réparti harmonieusement dans le do
 Plutôt que de fixer un nombre d’itérations arbitraire, on introduit un critère d’arrêt basé sur la variation maximale du potentiel entre deux itérations successives. Le calcul s’arrête lorsque cette variation devient inférieure à un seuil donné.
 **Figure – Potentiel avec arrêt à epsilon = 0.01**
 
-![Figure 3](images/fig3.jpg)
+![Figure 3](images/TP1/fig3.jpg)
 
 L’utilisation d’un critère de convergence rend l’algorithme plus précis et adaptatif : le calcul s’arrête automatiquement dès que le potentiel devient stable. Un seuil plus strict entraîne un plus grand nombre d’itérations, mais ne modifie pas significativement la forme du potentiel – seulement sa précision numérique. La solution reste visuellement très proche de celle obtenue avec 200 itérations.
 
@@ -84,7 +84,7 @@ Quand le domaine est plus grand, les conducteurs sont plus éloignés des bords 
 Nous avons tracé les lignes équipotentielles à l’aide de la fonction contour, qui permet de visualiser les zones à potentiel constant.
 **Figure – Lignes équipotentielles**
 
-![Figure 5](images/fig5.jpg)
+![Figure 5](images/TP1/fig5.jpg)
 
 Les lignes équipotentielles sont perpendiculaires au champ électrique. Elles montrent comment le potentiel évolue entre les deux conducteurs. Plus elles sont rapprochées, plus le champ est intense. C’est un outil précieux pour visualiser le comportement du système.
 
@@ -94,14 +94,14 @@ On calcule le champ électrique à partir du gradient du potentiel, les composan
 
 **Figure – Champ électrique (vecteurs)**
 
-![Figure 6](images/fig6.jpg)
+![Figure 6](images/TP1/fig6.jpg)
 
 Le champ électrique est bien dirigé du conducteur positif vers le négatif. Les vecteurs sont plus denses et plus longs près des conducteurs (champ intense), et s’éloignent à mesure qu’on s’écarte. La distribution est cohérente avec la physique attendue d’un champ électrostatique.
 ## Étape 7 – Calcul de la capacité (tp07.m)
 
 Dans cette dernière étape, on utilise le champ électrique E=−∇V pour estimer la charge totale Q entourant le conducteur à +100 V, puis on calcule la capacité selon :  C = Q/U
 
-![Figure 7](images/fig7.jpg)
+![Figure 7](images/TP1/fig7.jpg)
 
 ## 9. Conclusion 
 
