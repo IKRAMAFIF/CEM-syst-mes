@@ -203,8 +203,7 @@ Deux simulations ont été réalisées en utilisant la méthode FDTD sur 400 it�
 ![cavité_chargée](images/TP3/cavité_chargée.jpg)
 
 Le script `tp06.m` a été utilisé pour lancer ces deux simulations.
-![Tp06](images/TP3/tp06.jpg)
-
+![Simulation](images/TP3/tp06.jpg)
 
 ### Étape 3 : Analyse Temporelle
 
