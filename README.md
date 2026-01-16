@@ -115,7 +115,27 @@ Le script scriptFDTD01 met en œuvre la méthode FDTD (Finite Difference Time Do
 À chaque itération temporelle, le champ électrique E est d’abord calculé à partir des différences spatiales du champ magnétique H. Une source de type hard, de forme gaussienne, est ensuite appliquée au centre du domaine afin d’exciter l’onde électromagnétique. Le champ magnétique H est ensuite mis à jour à partir des variations spatiales du champ électrique.
 
 Les champs E et H évoluent ainsi selon le schéma classique de la méthode FDTD, sans conservation des valeurs intermédiaires. Le script permet de visualiser en temps réel la propagation de l’onde à travers l’affichage du champ électrique E à chaque itération, puis présente les distributions finales des champs électrique et magnétique à la fin de la simulation.
+ ![Figure 7](images/TP2/image2_1.png) 
+ 
+ ![Figure 7](images/TP2/image2_2.png)
 
+ ## Exercice 2 – Test de la condition de stabilité
+ Dans cette partie, la longueur du domaine de simulation est doublée afin de limiter les effets de bord et d’éviter les réflexions aux extrémités du segment.
+
+Pour α = 0.5 et un domaine doublé (L = 4), le schéma FDTD demeure stable, car le critère de stabilité est largement respecté. Cependant, on constate une dispersion numérique plus importante : le pulse gaussien se déforme progressivement au cours de la propagation. Cette déformation s’explique par un pas de temps trop faible, qui accentue les erreurs de dispersion inhérentes au schéma FDTD.
+
+ ![Figure 7](images/TP2/images2_3.png)
+ Pour alpha = 1.1 et avec L doublé (L = 4) :
+ ![Figure 7](images/TP2/images2_4.png)
+ Pour alpha = 1.01 et avec L doublé (L = 4) :
+ ![Figure 7](images/TP2/images2_5.png)
+ À l’inverse, dès que α dépasse 1 (α = 1.01 ou 1.1), la simulation devient instable : les champs divergent rapidement
+ et des oscillations non physiques apparaissent.
+ Pour alpha = 0.95 et avec L doublé (L = 4) :
+ ![Figure 7](images/TP2/images2_6.png)
+ Pour alpha = 0.99 et avec L doublé (L = 4) :
+ ![Figure 7](images/TP2/images2_7.png)
+  
 ---
 # Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
 
