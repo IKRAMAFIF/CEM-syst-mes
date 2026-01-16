@@ -116,6 +116,107 @@ Le script scriptFDTD01 met en œuvre la méthode FDTD (Finite Difference Time Do
 
 Les champs E et H évoluent ainsi selon le schéma classique de la méthode FDTD, sans conservation des valeurs intermédiaires. Le script permet de visualiser en temps réel la propagation de l’onde à travers l’affichage du champ électrique E à chaque itération, puis présente les distributions finales des champs électrique et magnétique à la fin de la simulation.
 
+---
+# Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
+
+Cette partie sert de compte-rendu pour le TP3 sur la sensibilisation à la simulation électromagnétique (CEM) et la modélisation de cavités résonantes avec la méthode FDTD (Différences Finies dans le Domaine Temporel).
+
+## 1. Objectifs du TP
+
+Les principaux objectifs de ce travail pratique étaient :
+- Évaluer numériquement les fréquences de résonance d'une cavité parallélépipédique.
+- Modéliser le comportement d'une cavité réverbérante via un code FDTD 3D.
+- Comprendre l'influence d'un matériau diélectrique sur les modes de résonance.
+
+## 2. Structure du Projet
+
+Le projet est organisé autour de plusieurs scripts `.m` situés dans le répertoire `TP3_solution/` :
+
+- **Calcul Analytique :**
+  - `tp00.m` : Calcule les fréquences de résonance théoriques.
+- **Simulations FDTD :**
+  - `FDTD_crbm_vide.m` : Simule une cavité vide.
+  - `FDTD_crbm_chargee.m` : Simule une cavité chargée avec un diélectrique.
+  - `tp06.m` : Lance les deux simulations FDTD.
+- **Analyse Temporelle :**
+  - `tp07.m` : Visualise les résultats temporels pour chaque simulation séparément.
+  - `tp07_comparaison.m` : Superpose et compare les résultats temporels.
+- **Analyse Fréquentielle :**
+  - `FFT_crbm_modified.m` : Fonction pour réaliser la Transformée de Fourier Rapide.
+  - `tp08.m` : Script qui appelle la fonction FFT.
+  - `tp09.m` : Visualise et analyse les spectres en fréquence.
+
+## 3. Déroulement et Résultats
+
+### Étape 1 : Calcul Analytique des Fréquences de Résonance
+
+La première étape consistait à calculer les fréquences de résonance théoriques d'une cavité de dimensions a=6.7m, b=8.4m, d=3.5m à l'aide de la formule :
+`f_mnp = (c/2) * sqrt((m/a)^2 + (n/b)^2 + (p/d)^2)`
+
+Le script `tp00.m` a été créé à cet effet.
+
+**Résultats obtenus :**
+
+```
+Les 10 premiers modes de résonance viables (m, n, p, fréquence en Hz) :
+  Mode (1, 1, 0): 28637436.48 Hz
+  Mode (1, 2, 0): 42151339.50 Hz
+  Mode (0, 1, 1): 46428571.43 Hz
+  Mode (2, 1, 0): 48205584.94 Hz
+  Mode (1, 0, 1): 48352455.07 Hz
+  Mode (1, 1, 1): 51544519.22 Hz
+  Mode (0, 2, 1): 55787497.69 Hz
+  Mode (2, 2, 0): 57274872.96 Hz
+  Mode (1, 3, 0): 58061374.22 Hz
+  Mode (1, 2, 1): 60112146.15 Hz
+```
+
+### Étape 2 : Simulation FDTD
+
+Deux simulations ont été réalisées en utilisant la méthode FDTD sur 400 itérations temporelles :
+1.  **Cavité Vide :** Simule la cavité remplie d'air (vide). Les résultats sont sauvegardés dans `result_vide.txt`.
+2.  **Cavité Chargée :** Simule la même cavité avec un bloc diélectrique (εr = 3) à l'intérieur. Les résultats sont sauvegardés dans `result_chargee.txt`.
+
+Le script `tp06.m` a été utilisé pour lancer ces deux simulations.
+
+### Étape 3 : Analyse Temporelle
+
+Les résultats temporels des champs électriques (Ex, Ey, Ez) au point d'observation ont été visualisés. Bien que les graphiques des deux simulations apparaissent similaires au premier abord, une analyse comparative (`tp07_comparaison.m`) a révélé des différences subtiles dans la phase et l'amplitude des ondes après l'arrivée de l'impulsion initiale, confirmant que le diélectrique a une influence sur la propagation des ondes.
+
+### Étape 4 : Analyse Fréquentielle et Conclusion
+
+L'analyse FFT a été réalisée sur les données temporelles pour obtenir les spectres en fréquence.
+
+**Analyse des résultats :**
+
+À partir du spectre fréquentiel complet, on observe que la cavité vide présente un pic de résonance principal à basse fréquence, autour de 60 MHz.
+
+Pour la cavité chargée, ce pic est légèrement décalé vers une fréquence plus basse, autour de 50–55 MHz. Les résonances secondaires présentent le même comportement.
+
+Ce décalage vers les basses fréquences est dû à la présence du diélectrique, qui augmente la permittivité effective de la cavité et diminue ainsi ses fréquences de résonance.
+
+La plage [80MHz, 150MHz] demandée dans le TP correspond à un minimum spectral et ne contient donc pas de résonances majeures pour cette configuration.
+
+## 4. Comment Exécuter le Projet
+
+Pour reproduire les résultats de ce TP dans Octave :
+
+1.  Ouvrez Octave.
+2.  Naviguez vers le répertoire principal du TP :
+    ```octave
+    cd C:\Users\user\Downloads\etudiants_ENSEA_TP3\etudiants_ENSEA_TP3
+    ```
+3.  Ajoutez le dossier de la solution au chemin d'Octave :
+    ```octave
+    addpath('TP3_solution');
+    ```
+4.  Exécutez les scripts dans l'ordre souhaité :
+    - **Calcul analytique :** `tp00`
+    - **Simulations FDTD (long) :** `tp06`
+    - **Visualisation temporelle :** `tp07` et `tp07_comparaison`
+    - **Calcul FFT :** `tp08`
+    - **Visualisation fréquentielle (filtrée) :** `tp09`
+    - *Pour revoir le spectre complet, il faut décommenter les lignes correspondantes dans `tp09.m`.*
 
 
 
