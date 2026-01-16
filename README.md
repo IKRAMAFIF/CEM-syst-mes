@@ -187,20 +187,10 @@ Le script `tp00.m` a été créé à cet effet.
 
 **Résultats obtenus :**
 
-```
 Les 10 premiers modes de résonance viables (m, n, p, fréquence en Hz) :
-  Mode (1, 1, 0): 28637436.48 Hz
-  Mode (1, 2, 0): 42151339.50 Hz
-  Mode (0, 1, 1): 46428571.43 Hz
-  Mode (2, 1, 0): 48205584.94 Hz
-  Mode (1, 0, 1): 48352455.07 Hz
-  Mode (1, 1, 1): 51544519.22 Hz
-  Mode (0, 2, 1): 55787497.69 Hz
-  Mode (2, 2, 0): 57274872.96 Hz
-  Mode (1, 3, 0): 58061374.22 Hz
-  Mode (1, 2, 1): 60112146.15 Hz
-```
+
 ![Résonance](images/TP3/résonnance.jpg)
+
 ### Étape 2 : Simulation FDTD
 
 Deux simulations ont été réalisées en utilisant la méthode FDTD sur 400 itérations temporelles :
@@ -237,28 +227,6 @@ Ce décalage vers les basses fréquences est dû à la présence du diélectriqu
 ![Spectre](images/TP3/Spectre_bandefreq.jpg)
 
 La plage [80MHz, 150MHz] demandée dans le TP correspond à un minimum spectral et ne contient donc pas de résonances majeures pour cette configuration.
-
-
-## 4. Comment Exécuter le Projet
-
-Pour reproduire les résultats de ce TP dans Octave :
-
-1.  Ouvrez Octave.
-2.  Naviguez vers le répertoire principal du TP :
-    ```octave
-    cd C:\Users\user\Downloads\etudiants_ENSEA_TP3\etudiants_ENSEA_TP3
-    ```
-3.  Ajoutez le dossier de la solution au chemin d'Octave :
-    ```octave
-    addpath('TP3_solution');
-    ```
-4.  Exécutez les scripts dans l'ordre souhaité :
-    - **Calcul analytique :** `tp00`
-    - **Simulations FDTD (long) :** `tp06`
-    - **Visualisation temporelle :** `tp07` et `tp07_comparaison`
-    - **Calcul FFT :** `tp08`
-    - **Visualisation fréquentielle (filtrée) :** `tp09`
-    - *Pour revoir le spectre complet, il faut décommenter les lignes correspondantes dans `tp09.m`.*
 
 
 
