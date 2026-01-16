@@ -195,13 +195,15 @@ Les 10 premiers modes de résonance viables (m, n, p, fréquence en Hz) :
 
 Deux simulations ont été réalisées en utilisant la méthode FDTD sur 400 itérations temporelles :
 1.  **Cavité Vide :** Simule la cavité remplie d'air (vide). Les résultats sont sauvegardés dans `result_vide.txt`.
+   
 ![cavité_vide](images/TP3/cavité_vide.jpg)
    
 2.  **Cavité Chargée :** Simule la même cavité avec un bloc diélectrique (εr = 3) à l'intérieur. Les résultats sont sauvegardés dans `result_chargee.txt`.
+   
 ![cavité_chargée](images/TP3/cavité_chargée.jpg)
 
 Le script `tp06.m` a été utilisé pour lancer ces deux simulations.
-![tp06](images/TP3/tp06.jpg)
+![Tp06](images/TP3/tp06.jpg)
 
 
 ### Étape 3 : Analyse Temporelle
@@ -217,11 +219,16 @@ L'analyse FFT a été réalisée sur les données temporelles pour obtenir les s
 
 À partir du spectre fréquentiel complet, on observe que la cavité vide présente un pic de résonance principal à basse fréquence, autour de 60 MHz.
 
+![Cavité complet](images/TP3/Spectre_complet.jpg)
+
 Pour la cavité chargée, ce pic est légèrement décalé vers une fréquence plus basse, autour de 50–55 MHz. Les résonances secondaires présentent le même comportement.
 
 Ce décalage vers les basses fréquences est dû à la présence du diélectrique, qui augmente la permittivité effective de la cavité et diminue ainsi ses fréquences de résonance.
 
+![Spectre](images/TP3/Spectre_bandefreq.jpg)
+
 La plage [80MHz, 150MHz] demandée dans le TP correspond à un minimum spectral et ne contient donc pas de résonances majeures pour cette configuration.
+
 
 ## 4. Comment Exécuter le Projet
 
