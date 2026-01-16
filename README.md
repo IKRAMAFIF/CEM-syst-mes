@@ -195,13 +195,19 @@ Les 10 premiers modes de résonance viables (m, n, p, fréquence en Hz) :
 
 Deux simulations ont été réalisées en utilisant la méthode FDTD sur 400 itérations temporelles :
 1.  **Cavité Vide :** Simule la cavité remplie d'air (vide). Les résultats sont sauvegardés dans `result_vide.txt`.
+![cavité_vide](images/TP3/cavité_vide.jpg)
+   
 2.  **Cavité Chargée :** Simule la même cavité avec un bloc diélectrique (εr = 3) à l'intérieur. Les résultats sont sauvegardés dans `result_chargee.txt`.
+![cavité_chargée](images/TP3/cavité_chargée.jpg)
 
 Le script `tp06.m` a été utilisé pour lancer ces deux simulations.
+![tp06](images/TP3/tp06.jpg)
+
 
 ### Étape 3 : Analyse Temporelle
 
 Les résultats temporels des champs électriques (Ex, Ey, Ez) au point d'observation ont été visualisés. Bien que les graphiques des deux simulations apparaissent similaires au premier abord, une analyse comparative (`tp07_comparaison.m`) a révélé des différences subtiles dans la phase et l'amplitude des ondes après l'arrivée de l'impulsion initiale, confirmant que le diélectrique a une influence sur la propagation des ondes.
+![Comparaison](images/TP3/Comparaison_cavité.jpg)
 
 ### Étape 4 : Analyse Fréquentielle et Conclusion
 
