@@ -221,7 +221,7 @@ Au-delà de 2000 itérations, les profils des champs tendent à se stabiliser, c
 
 Enfin, la visualisation du champ électrique peut être améliorée en représentant le slab diélectrique à l’écran à l’aide de traits distinctifs et/ou d’une zone colorée, afin de mieux identifier la position du milieu et d’interpréter les phénomènes observés.
 
- <img src="images/TP2/images2_20.png" alt="Figure 7" width="700">
+ <img src="images/TP2/images20.png" alt="Figure 7" width="700">
 ---
 # Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
 
