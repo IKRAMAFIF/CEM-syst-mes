@@ -145,6 +145,34 @@ Pour α = 0.5 et un domaine doublé (L = 4), le schéma FDTD demeure stable, car
  Pour alpha = 0.99 et avec L doublé (L = 4) :
  
 <img src="images/TP2/images2_7.png" alt="Figure 7" width="700">
+
+Pour conclure, lorsque le coefficient α est inférieur ou égal à 1, comme dans les cas α = 0.95 ou α = 0.99, la simulation reste stable et l’onde se propage sans divergence numérique. Ces résultats montrent que le critère de stabilité α ≤ 1 doit impérativement être respecté dans le schéma FDTD. Ils mettent également en évidence qu’un choix de α proche de 1 permet de limiter la dispersion numérique et d’obtenir une propagation plus précise de l’onde électromagnétique.
+
+ ## Exercice 3 : Les sources temporelles => scriptFDTD02
+ 
+<img src="images/TP2/images2_8.png" alt="Figure 7" width="700">
+
+Lorsque les ondes atteignent les limites du domaine de simulation, elles subissent un déphasage de 180°, car les extrémités sont modélisées comme des parois conductrices parfaites (PEC). Dans ce cas, la composante tangentielle du champ électrique doit être nulle au niveau des parois, ce qui impose que l’onde réfléchie revienne avec un signe opposé afin d’annuler l’onde incidente au mur.
+
+Après réflexion, les deux pulses inversés se propagent de nouveau vers le centre du domaine. Lorsqu’ils s’y rencontrent, ils se retrouvent quasi en opposition de phase, ce qui revient à imposer localement une condition E = 0. Cette contrainte agit alors comme une réflexion supplémentaire, équivalente à la présence d’un second mur PEC au centre du domaine.
+
+Ainsi, les déphasages observés aussi bien aux bords qu’au centre du domaine sont directement liés aux conditions PEC imposées aux extrémités et à l’effet de la hard source, qui, lorsque son amplitude devient négligeable, se comporte elle aussi comme une condition de type E = 0.
+
+ ## Exercice 4 : Les sources temporelles (hard source modifiée) =>scriptFDTD02
+ 
+ <img src="images/TP2/images2_9.png" alt="Figure 7" width="700">
+ Lorsque le code est modifié de manière à ce que la source hard cesse d’imposer le champ électrique au centre du domaine après n = 60, les premières itérations génèrent une onde qui se propage normalement à partir du centre.
+
+Une fois la source désactivée, le point central redevient une cellule FDTD classique, sans contrainte particulière sur le champ électrique. L’onde peut alors traverser le centre du domaine sans perturbation. Ainsi, lorsqu’une onde réfléchie revient vers le centre après avoir été réfléchie aux bords, elle n’est plus soumise à une condition imposée et poursuit sa propagation de façon naturelle.
+
+On observe alors qu’au niveau du centre, les ondes se superposent sans déphasage, contrairement au cas où la source hard impose une condition de type E = 0, ce qui confirme l’influence directe de la source sur le comportement des ondes réfléchies.
+
+ ##  Exercice 5 : Les sources temporelles (soft source) => scriptFDTD02
+ 
+ <img src="images/TP2/images2_10.png" alt="Figure 7" width="700">
+ 
+ On observe le même comportement qu’avec la source hard modifiée mais avec une amplitude divisée par 2. 
+
   
 ---
 # Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
