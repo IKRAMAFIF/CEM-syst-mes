@@ -1,8 +1,9 @@
-# Rapport de TP – Simulation du potentiel électrostatique par méthode DF
+
 ## Préparé par
 AFIF Ikram
 
 AIT ALLA Hajar
+# Rapport de TP1 – Simulation du potentiel électrostatique par méthode DF
 ## 1. Introduction
 
 Dans le domaine de la compatibilité électromagnétique (CEM), la détermination du potentiel électrostatique est essentielle pour comprendre l’influence de structures conductrices sur leur environnement. Lorsque la géométrie devient complexe, la résolution analytique de l’équation de Laplace n’est plus envisageable. On utilise alors des méthodes numériques comme celle des différences finies (DF).
@@ -106,7 +107,14 @@ Dans cette dernière étape, on utilise le champ électrique E=−∇V pour esti
 
 Ce TP a permis de simuler la répartition du potentiel électrostatique dans un domaine 2D à l’aide de la méthode des différences finies. La solution obtenue est cohérente avec la physique attendue, montrant un champ électrique dirigé du conducteur positif vers le conducteur négatif. L’utilisation d’un critère de convergence, l’analyse des lignes équipotentielles et le calcul de la capacité ont permis de valider la méthode numérique et de mieux comprendre le comportement des systèmes électrostatiques.
 
+# Rapport de TP2 – Utilisation de la méthode DF pour la simulation CEM
+## Exercice 1 – Algorithme FDTD (Implémentation Matlab)
 
+Le script scriptFDTD01 met en œuvre la méthode FDTD (Finite Difference Time Domain) afin de modéliser la propagation d’une onde électromagnétique unidimensionnelle dans le vide. Le domaine spatial est discrétisé en 201 points, tandis que la simulation temporelle est réalisée sur 100 pas de temps, avec un pas temporel choisi de manière à respecter le critère de stabilité de la méthode.
+
+À chaque itération temporelle, le champ électrique E est d’abord calculé à partir des différences spatiales du champ magnétique H. Une source de type hard, de forme gaussienne, est ensuite appliquée au centre du domaine afin d’exciter l’onde électromagnétique. Le champ magnétique H est ensuite mis à jour à partir des variations spatiales du champ électrique.
+
+Les champs E et H évoluent ainsi selon le schéma classique de la méthode FDTD, sans conservation des valeurs intermédiaires. Le script permet de visualiser en temps réel la propagation de l’onde à travers l’affichage du champ électrique E à chaque itération, puis présente les distributions finales des champs électrique et magnétique à la fin de la simulation.
 
 
 
