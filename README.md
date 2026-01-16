@@ -223,6 +223,7 @@ Enfin, la visualisation du champ électrique peut être améliorée en représen
 
  <img src="images/TP2/images20.png" alt="Figure 7" width="700">
 ---
+
 # Rapport du TP3 : Modélisation de Cavités Résonantes avec FDTD
 
 Cette partie sert de compte-rendu pour le TP3 sur la sensibilisation à la simulation électromagnétique (CEM) et la modélisation de cavités résonantes avec la méthode FDTD (Différences Finies dans le Domaine Temporel).
