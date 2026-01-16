@@ -210,7 +210,7 @@ Le script `tp06.m` a été utilisé pour lancer ces deux simulations.
 Les résultats temporels des champs électriques (Ex, Ey, Ez) au point d'observation ont été visualisés. Bien que les graphiques des deux simulations apparaissent similaires au premier abord, une analyse comparative (`tp07_comparaison.m`) a révélé des différences subtiles dans la phase et l'amplitude des ondes après l'arrivée de l'impulsion initiale, confirmant que le diélectrique a une influence sur la propagation des ondes.
 ![Comparaison](images/TP3/Comparaison_cavité.jpg)
 
-### Étape 4 : Analyse Fréquentielle et Conclusion
+### Étape 4 : Analyse Fréquentielle 
 
 L'analyse FFT a été réalisée sur les données temporelles pour obtenir les spectres en fréquence.
 
@@ -229,6 +229,15 @@ Ce décalage vers les basses fréquences est dû à la présence du diélectriqu
 La plage [80MHz, 150MHz] demandée dans le TP correspond à un minimum spectral et ne contient donc pas de résonances majeures pour cette configuration.
 
 
+### Conclusion
+
+Ce travail pratique a permis de mettre en œuvre une chaîne complète de simulation électromagnétique pour l'analyse d'une cavité résonante. En
+partant du calcul analytique des modes de résonance, nous avons utilisé un code FDTD pour simuler le comportement temporel d'une cavité, d'abord vide, puis chargée par un diélectrique.
+
+L'analyse des résultats a mis en évidence plusieurs points clés :
+   - La méthode FDTD est un outil puissant qui permet d'obtenir une réponse large bande à partir d'une unique simulation temporelle.
+   - La Transformée de Fourier (FFT) est essentielle pour passer du domaine temporel au domaine fréquentiel afin d'identifier les fréquences de résonance.
+   - L'influence d'un matériau diélectrique a été clairement démontrée : les résultats de la simulation confirment la théorie, qui prédit un décalage des fréquences de résonance vers des valeurs plus basses en raison de l'augmentation de la permittivité effective de la cavité.
 
 
 
